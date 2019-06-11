@@ -1,6 +1,8 @@
 package com.kotlinsevilla.cookietinder
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,6 +20,12 @@ class MainActivity : AppCompatActivity() {
         allCookies = CookieRepository.getAllCookies()
 
         loadNext()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
     }
 
     fun onLike(view: View) {

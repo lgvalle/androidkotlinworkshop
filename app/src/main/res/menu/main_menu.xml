@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/liked"
-        android:icon="@android:drawable/star_on"
+        android:icon="@drawable/ic_liked"
         android:title="Liked Cookies"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/disliked"
-        android:icon="@android:drawable/star_off"
+        android:icon="@drawable/ic_disliked"
         android:title="Disliked Cookies"
         app:showAsAction="always" />
 

@@ -19,4 +19,6 @@ class LikedCookiesActivity : AppCompatActivity() {
             container.addView(textView)
         }
     }
+
+
 }

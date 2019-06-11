@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#D7537D</color>
+    <color name="colorPrimaryDark">#a21d51</color>
+    <color name="colorAccent">#d6c120</color>
+    <color name="dislike">#5C0505</color>
+    <color name="like">#4CAF50</color>
 </resources>
