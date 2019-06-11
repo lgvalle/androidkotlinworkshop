@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    val cookieRepository = CookieRepository()
+
     lateinit var allCookies: List<Cookie> // TODO (explicar lateinit)
     var current: Int = 0
 
@@ -15,19 +15,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        allCookies = cookieRepository.getAllCookies()
+        allCookies = CookieRepository.getAllCookies()
 
         loadNext()
     }
 
     fun onLike(view: View) {
-        cookieRepository.like(allCookies[current])
+        CookieRepository.like(allCookies[current])
         loadNext()
     }
 
     fun onDislike(view: View) {
-        cookieRepository.dislike(allCookies[current])
+        CookieRepository.dislike(allCookies[current])
         loadNext()
     }
 

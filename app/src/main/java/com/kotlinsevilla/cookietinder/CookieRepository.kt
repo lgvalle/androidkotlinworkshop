@@ -1,7 +1,10 @@
 package com.kotlinsevilla.cookietinder
 
 
-class CookieRepository {
+object CookieRepository {
+
+    private val liked = mutableListOf<Cookie>()
+    private val disliked = mutableListOf<Cookie>()
 
     fun getAllCookies() = listOf(
         Cookie("Tosta Rica", "¿Qué quereis desayunar?"),
@@ -10,10 +13,18 @@ class CookieRepository {
     )
 
     fun like(cookie: Cookie) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        liked.add(cookie)
     }
 
     fun dislike(cookie: Cookie) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        disliked.add(cookie)
+    }
+
+    fun likedCookies(): List<Cookie> {
+        return liked
+    }
+
+    fun dislikedCookies(): List<Cookie> {
+        return disliked
     }
 }
