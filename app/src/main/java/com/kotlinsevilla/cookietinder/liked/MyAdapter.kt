@@ -8,22 +8,12 @@ import com.kotlinsevilla.cookietinder.Cookie
 import com.kotlinsevilla.cookietinder.R
 
 
-class MyAdapter(private val myDataset: List<Cookie>) :
-    RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
-
+class MyAdapter(private val myDataset: List<Cookie>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     // Create new views (invoked by the layout manager)
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MyViewHolder {
-        // create a new view
-        val viewGroup = LayoutInflater.from(parent.context)
-            .inflate(R.layout.liked_cookies_row, parent, false) as ViewGroup
-        // set the view's size, margins, paddings and layout parameters
-
-        return MyViewHolder(viewGroup)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(
+        LayoutInflater.from(parent.context).inflate(R.layout.liked_cookies_row, parent, false) as ViewGroup
+    )
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -40,6 +30,6 @@ class MyAdapter(private val myDataset: List<Cookie>) :
     // you provide access to all the views for a data item in a view holder.
     // Each data item is just a string in this case that is shown in a TextView.
     class MyViewHolder(viewGroup: ViewGroup) : RecyclerView.ViewHolder(viewGroup) {
-        val cookieName = viewGroup.findViewById<TextView>(R.id.liked_cookie_name)
+        val cookieName: TextView = viewGroup.findViewById(R.id.liked_cookie_name)
     }
 }
