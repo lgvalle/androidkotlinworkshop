@@ -16,6 +16,7 @@ class LikedCookiesActivity : AppCompatActivity() {
         val container = findViewById<LinearLayout>(R.id.liked_cookies_container)
         for (likedCookie in likedCookies) {
             val textView = TextView(this)
+            textView.text = likedCookie.name
             container.addView(textView)
         }
     }

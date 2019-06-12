@@ -1,8 +1,10 @@
 package com.kotlinsevilla.cookietinder
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -26,6 +28,14 @@ class MainActivity : AppCompatActivity() {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.liked -> startActivity(Intent(this, LikedCookiesActivity::class.java))
+            R.id.disliked -> startActivity(Intent(this, LikedCookiesActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun onLike(view: View) {
