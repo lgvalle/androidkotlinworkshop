@@ -3,7 +3,6 @@ package com.kotlinsevilla.cookietinder
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
@@ -14,20 +13,19 @@ import com.kotlinsevilla.cookietinder.liked.LikedCookiesActivity
 class MainActivity : AppCompatActivity() {
 
     lateinit var allCookies: List<Cookie> // TODO (explicar lateinit)
-    var current: Int = 0
+    private var current: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        allCookies = CookieRepository.getAllCookies()
+        allCookies = CookieRepository.getInstance().getAllCookies()
 
         loadNext()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.main_menu, menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
@@ -40,12 +38,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onLike(view: View) {
-        CookieRepository.like(allCookies[current])
+        CookieRepository.getInstance().like(allCookies[current])
         loadNext()
     }
 
     fun onDislike(view: View) {
-        CookieRepository.dislike(allCookies[current])
+        CookieRepository.getInstance().dislike(allCookies[current])
         loadNext()
     }
 
@@ -58,7 +56,10 @@ class MainActivity : AppCompatActivity() {
         cookieName.text = cookie.name
         cookieDescription.text = cookie.description
 
-        current++ // TODO - control del final del array
+        // TODO - control del final del array
+        if (allCookies.size > current) {
+            current++
+        }
     }
 
 

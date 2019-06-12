@@ -13,7 +13,7 @@ class LikedCookiesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_liked_cookies)
 
-        val likedCookies = CookieRepository.likedCookies()
+        val likedCookies = CookieRepository.getInstance().likedCookies()
 
         val viewAdapter = MyAdapter(likedCookies)
 
