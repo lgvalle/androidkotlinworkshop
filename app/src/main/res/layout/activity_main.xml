@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/cookie1" />
+        tools:srcCompat="@drawable/cookie_placeholder" />
 
     <TextView
         android:id="@+id/cookieDescription"
