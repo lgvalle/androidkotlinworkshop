@@ -7,10 +7,10 @@ import org.junit.Test
 class CookieRepositoryTest {
     private val anyImageResourceId = 1234
     private val testCookies = listOf(
-        Cookie("A cookie", "Description for a cookie", anyImageResourceId),
-        Cookie("Second cookie", "Description for the second cookie", anyImageResourceId),
+        Cookie("a cookie", "Description for a cookie", anyImageResourceId),
+        Cookie("Second Cookie", "Description for the second cookie", anyImageResourceId),
         Cookie("Faceless cookie", "Description for a cookie without image"),
-        Cookie("Another cookie", "Description for another cookie", anyImageResourceId)
+        Cookie("another Cookie", "Description for another cookie", anyImageResourceId)
     )
     private val cookieRepository = CookieRepository(testCookies)
 
