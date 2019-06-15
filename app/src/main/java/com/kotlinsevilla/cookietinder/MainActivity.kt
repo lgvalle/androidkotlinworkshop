@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         listOf(
             Cookie("Oreo", "Likes sandwiches and chocolate", R.drawable.cookie_oreo),
             Cookie("Maria", "Enjoys the Sun and lying on the beach", R.drawable.cookie_maria),
-            Cookie("Chips Ahoy", "Has pieces of chocolate", R.drawable.cookie_chips_ahoy),
-            Cookie("Filipinos", "Small but tasty", R.drawable.cookie_filipinos)
+            Cookie("Chips Ahoy", "Favourite Saturday plan: long milk bath", R.drawable.cookie_chips_ahoy),
+            Cookie("Filipinos", "Always with friends, you can't hang out only with one", R.drawable.cookie_filipinos)
         )
     )
 
