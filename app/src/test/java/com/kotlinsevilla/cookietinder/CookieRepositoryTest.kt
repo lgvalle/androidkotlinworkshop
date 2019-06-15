@@ -5,13 +5,13 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class CookieRepositoryTest {
+    private val anyImageResourceId = 1234
     private val testCookies = listOf(
-        Cookie("Test cookie 1", "Test description for cookie 1"),
-        Cookie("Test cookie 2", "Test description for cookie 2"),
-        Cookie("Test cookie 3", "Test description for cookie 3"),
-        Cookie("Test cookie 4", "Test description for cookie 4"),
+        Cookie("A cookie", "Description for a cookie", anyImageResourceId),
+        Cookie("Second cookie", "Description for the second cookie", anyImageResourceId),
+        Cookie("Faceless cookie", "Description for a cookie without image"),
+        Cookie("Another cookie", "Description for another cookie", anyImageResourceId)
     )
-
     private val cookieRepository = CookieRepository(testCookies)
 
     @Test
@@ -47,8 +47,4 @@ class CookieRepositoryTest {
         assertTrue(cookieRepository.dislikedCookies().contains(cookie))
     }
 
-
-    fun `contains a list of chocolate free cookies`() {
-
-    }
 }
