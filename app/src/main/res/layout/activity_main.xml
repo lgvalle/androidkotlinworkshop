@@ -27,7 +27,7 @@
         android:adjustViewBounds="true"
         android:cropToPadding="false"
         android:scaleType="centerInside"
-        android:src="@drawable/cookie1"
+        android:src="@drawable/cookie_placeholder"
         app:layout_constraintBottom_toTopOf="@+id/cookieName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
