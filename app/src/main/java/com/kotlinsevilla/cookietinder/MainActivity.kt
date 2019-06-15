@@ -9,6 +9,15 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    private val cookieRepository = CookieRepository(
+        listOf(
+            Cookie("Oreo", "Likes sandwiches and chocolate", R.drawable.cookie_oreo),
+            Cookie("Maria", "Enjoys the Sun and lying on the beach", R.drawable.cookie_maria),
+            Cookie("Chips Ahoy", "Has pieces of chocolate", R.drawable.cookie_chips_ahoy),
+            Cookie("Filipinos", "Small but tasty", R.drawable.cookie_filipinos)
+        )
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
