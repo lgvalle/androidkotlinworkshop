@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         )
     )
 
+    private val allCookies = cookieRepository.getAllCookies()
+    private var index = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,12 +31,26 @@ class MainActivity : AppCompatActivity() {
         val likeButton = findViewById<Button>(R.id.likeButton)
         val dislikeButton = findViewById<Button>(R.id.dislikeButton)
 
-        cookieName.text = "Oreo"
-        cookieDescription.text = "Likes sandwiches and chocolate"
-        cookieImage.setImageResource(R.drawable.cookie_oreo)
+        val bindUI = { cookie: Cookie ->
+            cookieName.text = cookie.name
+            cookieDescription.text = cookie.description
+            cookieImage.setImageResource(cookie.image)
+        }
 
-        likeButton.setOnClickListener { Toast.makeText(this, "Like clicked!", Toast.LENGTH_SHORT).show() }
-        dislikeButton.setOnClickListener { Toast.makeText(this, "Dislike clicked!", Toast.LENGTH_SHORT).show() }
+        likeButton.setOnClickListener {
+            val cookie = allCookies[index]
+            Toast.makeText(this, "Like ${cookie.name}", Toast.LENGTH_SHORT).show()
+            cookieRepository.like(cookie)
+            bindUI(allCookies[++index])
+        }
+        dislikeButton.setOnClickListener {
+            val cookie = allCookies[index]
+            Toast.makeText(this, "Dislike ${cookie.name}", Toast.LENGTH_SHORT).show()
+            cookieRepository.dislike(cookie)
+            bindUI(allCookies[++index])
+        }
+
+        bindUI(allCookies[index])
     }
 
 }
