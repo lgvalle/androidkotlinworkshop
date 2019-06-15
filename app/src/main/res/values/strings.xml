@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CookieTinder</string>
+    <string name="dislike">Dislike</string>
+    <string name="like">Like</string>
+    <string name="cookie_description_placeholder">##Cookie description placeholder##</string>
+    <string name="cookie_name_placeholder">##Cookie name##</string>
 </resources>
