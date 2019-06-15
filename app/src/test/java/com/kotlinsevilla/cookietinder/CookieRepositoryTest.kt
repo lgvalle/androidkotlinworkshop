@@ -20,6 +20,19 @@ class CookieRepositoryTest {
     }
 
     @Test
+    fun `list of cookies contains only cookies with image, sorted by name in camel case`() {
+        val expectedListOfCookies = listOf(
+            Cookie("A Cookie", "Description for a cookie", 1234),
+            Cookie("Another Cookie", "Description for another cookie", 4567),
+            Cookie("Second Cookie", "Description for the second cookie", 1234)
+        )
+
+        val allTheCookies = cookieRepository.getAllCookies()
+
+        assertEquals(expectedListOfCookies, allTheCookies)
+    }
+
+    @Test
     fun `initial list of liked cookies is empty`() {
         assertTrue(cookieRepository.likedCookies().isEmpty())
     }
