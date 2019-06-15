@@ -18,7 +18,7 @@ Before starting make sure you have:
 * An Android simulator created: https://developer.android.com/studio/run/managing-avds.html
 * Alternatively you can use your own device: https://developer.android.com/studio/run/device.html
 * This repository cloned
-* The branch `00-start` checked out
+* The branch `01-start` checked out
 
 
 ---
