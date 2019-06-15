@@ -38,15 +38,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         likeButton.setOnClickListener {
-            val cookie = allCookies[index]
-            Toast.makeText(this, "Like ${cookie.name}", Toast.LENGTH_SHORT).show()
-            cookieRepository.like(cookie)
+            allCookies[index].apply {
+                Toast.makeText(this@MainActivity, "Like ${this.name}", Toast.LENGTH_SHORT).show()
+                cookieRepository.like(this)
+            }
             bindUI(allCookies[++index])
         }
         dislikeButton.setOnClickListener {
-            val cookie = allCookies[index]
-            Toast.makeText(this, "Dislike ${cookie.name}", Toast.LENGTH_SHORT).show()
-            cookieRepository.dislike(cookie)
+            allCookies[index].apply {
+                Toast.makeText(this@MainActivity, "Dislike ${this.name}", Toast.LENGTH_SHORT).show()
+                cookieRepository.dislike(this)
+            }
             bindUI(allCookies[++index])
         }
 
