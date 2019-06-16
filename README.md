@@ -55,7 +55,7 @@ This branch contains the basic structure for an Android app:
 > A visual way to debug user clicks is using [Toast messages](https://developer.android.com/guide/topics/ui/notifiers/toasts)
 
 
-## 02-cookie-repository
+## 02-cookie-repository
 You have now a UI that can be set programatically, but we don't have any data for it! 
 
 We need a repository class to get the data from. In this step you're going to build `CookieRepository` using TDD.
