@@ -10,7 +10,9 @@
 
 We're going to build a dating app for cookies. 
 
-![screenshot](screenshots/app.png)
+
+<img src="https://github.com/lgvalle/androidkotlinworkshop/blob/01-start/screenshots/app.png" width=320/>
+
 
 Before starting make sure you have:
 
